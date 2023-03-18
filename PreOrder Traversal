@@ -1,0 +1,12 @@
+void insert(Node *root, vector<int>&ans){
+    if(root==NULL) return ;
+    ans.push_back(root->data);
+    insert(root->left,ans);
+    insert(root->right,ans);
+}
+vector <int> preorder(Node* root)
+{
+  vector<int>ans;
+  insert(root,ans);
+  return ans;
+}
