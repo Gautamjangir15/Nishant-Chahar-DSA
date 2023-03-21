@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int vowelStrings(vector<string>& words, int left, int right) {
+        int ans=0;
+        for(int i=left;i<=right;i++){
+            int n=words[i].length();
+            int a=words[i][0];
+            int b=words[i][n-1];
+            if((a==97 || a==101 || a==105 || a==111 || a==117) && (b==97 || b==101 || b==105 || b==111 || b==117)){
+                ans++;
+            }
+        }
+        return ans;
+    }
+};
