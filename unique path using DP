@@ -1,0 +1,16 @@
+class Solution {
+public:
+    int func(int m, int n, int i, int j, vector<vector<int>>&nums){
+        if(i>=m || j>=n) return 0;
+        if(i==m-1 && j==n-1){
+            return 1;
+        }
+        if(nums[i][j]!=-1) return nums[i][j];
+        return nums[i][j]=func(m,n,i+1,j,nums)+func(m,n,i,j+1, nums);
+    }
+    int uniquePaths(int m, int n) {
+        vector<vector<int>>nums(m,vector<int>(n,-1));
+        return func(m,n,0,0, nums);
+        
+    }
+};
